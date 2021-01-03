@@ -36,8 +36,6 @@ class Game {
     this.stepImages = stepImages;
     this.gameStages = [...this.stepImages].length - 1;
     this.stage = 0;
-    console.log(this.gameStages, this.stage);
-
     let { text, category } = this.quotes[
       Math.floor(Math.random() * this.quotes.length)
     ];
@@ -104,7 +102,6 @@ class Game {
     event.target.disabled = true;
     if (!this.quote.guess(letter)) {
       this.stage += 1;
-      console.log(this.stage);
       this.changeStageImage(this.stepImages, this.stage);
     }
     this.drawQuote();
